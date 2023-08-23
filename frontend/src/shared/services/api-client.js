@@ -28,7 +28,13 @@ export const apiclient ={
             }
 
     },
-    delete(){
-
+    async delete(URL ){
+        try {
+            const response = await axios.delete(URL );
+            return response ;
+        }
+        catch(err){
+            throw err;
+        }
     }
 }
