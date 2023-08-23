@@ -1,7 +1,12 @@
 import express from "express";
 import { contactdetailsRoutes } from "./routes/contactdetail.js";
+import cors from 'cors';
 
 const app = express();
+
+app.use(cors());
+
+
 // To take input from the Url Request 
 app.use(express.json());
 
