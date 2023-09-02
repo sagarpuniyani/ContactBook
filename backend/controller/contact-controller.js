@@ -17,7 +17,7 @@ export const contactcontroller = {
     // reading of the contact details 
 
     async readcontact( req , res ){
-        const contactInfo = req.body; // Assuming req.body contains the fields you want to search for
+        const contactInfo = req.body; 
 
             try {
             // Use contactInfo directly in the query without curly braces
@@ -45,7 +45,7 @@ export const contactcontroller = {
             }
             catch(err){
                 console.log('Error in Questions ', err);
-                res.json({message:'Error in Questions ', records: docs});
+                res.json({message:'Error in Questions '});
             }
     },
 
