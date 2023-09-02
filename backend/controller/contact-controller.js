@@ -18,11 +18,15 @@ export const contactcontroller = {
 
     async readcontact( req , res ){
         const contactInfo = req.body; 
+        const QuerryDoc = { };
 
             try {
-            // Use contactInfo directly in the query without curly braces
-            const docs = await contactModel.findOne(contactInfo).exec();
-
+            // Use contactInfo directly 
+            if(contactInfo.email)  QuerryDoc.email =  contactInfo.email
+            if(contactInfo.name)  QuerryDoc.name =  contactInfo.name
+            
+            const  docs = await contactModel.findOne(QuerryDoc).exec();
+            
             if (docs) {
                 console.log("Doc", docs);
                 res.json({ message: "Searched contacts", record: docs });

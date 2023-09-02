@@ -18,10 +18,10 @@ return (
     <Box sx={{ width: 1 }}>
         <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
         <Box gridColumn="span 6">
-            <Item> 📛 {props.Name} </Item>
+            <Item> 😁 {props.Name} </Item>
         </Box>
         <Box gridColumn="span 6">
-            <Item> 📱 {props.Mobile}</Item>
+            <Item> 📳 {props.Mobile}</Item>
         </Box>
         <Box gridColumn="span 6">
             <Item> ✅ {props.Desc}</Item>
