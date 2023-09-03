@@ -18,12 +18,14 @@ export const contactcontroller = {
 
     async readcontact( req , res ){
         const contactInfo = req.body; 
-        const QuerryDoc = { };
+        const QuerryDoc = {};
 
             try {
             // Use contactInfo directly 
-            if(contactInfo.email)  QuerryDoc.email =  contactInfo.email
-            if(contactInfo.name)  QuerryDoc.name =  contactInfo.name
+            if(contactInfo.email)  QuerryDoc.email =  contactInfo.email;
+            if(contactInfo.name)  QuerryDoc.name =  contactInfo.name;
+
+            console.log("From the Controller : " , contactInfo);
             
             const  docs = await contactModel.findOne(QuerryDoc).exec();
             

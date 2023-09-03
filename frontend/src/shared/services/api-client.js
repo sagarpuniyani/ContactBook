@@ -18,6 +18,20 @@ export const apiclient ={
             throw err;
         }
     },
+    async getOne(URL , data ){
+        try{
+        const response = await axios( 
+                            {method: 'get',
+                            url: URL,
+                            data: data,});
+            console.log("From Api Client : " , data);
+            console.log("Response from the  Api client : " , response)
+        return response;
+        }
+        catch(err){
+            throw err;
+        }
+    },
     async put( URL , data){
         try{
             const response = await axios.post(URL, data);
