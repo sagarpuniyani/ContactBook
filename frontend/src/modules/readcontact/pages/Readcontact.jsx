@@ -18,7 +18,7 @@ const Readcontact =  () => {
     
         try {
         console.log("From Get Contact : " , contactInfo);
-        const res = await apiclient.getOne("http://localhost:1234/getcontact", contactInfo);
+        const res = await apiclient.post("http://localhost:1234/getcontact", contactInfo);
         console.log("Res =", res);
         
         } catch (err) {
