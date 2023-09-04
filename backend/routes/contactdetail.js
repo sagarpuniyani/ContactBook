@@ -10,7 +10,7 @@ contactdetailsRoutes.post('/addcontact'  , contactcontroller.addcontact);
 
 
 // 2. read 
-contactdetailsRoutes.get('/getcontact' , contactcontroller.readcontact);
+contactdetailsRoutes.post('/getcontact' , contactcontroller.readcontact);
 
 // 3. read 
 contactdetailsRoutes.get('/getallcontact' , contactcontroller.readallcontacts);
