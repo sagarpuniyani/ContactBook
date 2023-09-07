@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+import Updatecontact from '../../updatecontact/pages/Updatecontact';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -29,6 +30,7 @@ return (
         {/* Update Button  */}
         <Link to='/updatecontact' >
         <Button id={props.ID} variant="outlined" color="secondary">Update</Button>
+        
         </Link>
 
 
