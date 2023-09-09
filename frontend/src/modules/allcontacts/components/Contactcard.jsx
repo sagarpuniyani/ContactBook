@@ -3,7 +3,9 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
+import { apiclient } from '../../../shared/services/api-client';
 import { Link } from 'react-router-dom';
+import Updatecontact from '../../updatecontact/pages/Updatecontact';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -14,6 +16,26 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const Contactcard = (props) => {
+
+    const DeleteContact = async () => {
+        try {
+            const res = await apiclient.delete('http://localhost:1234/removeContact/'+props.ID );
+            console.log("Response = " , res);
+        }
+        catch(err ){
+            console.log( err );
+        }
+    }
+
+    const ChangeContact = () => {
+        return(
+        <>
+        <Updatecontact Name={props.Name} ID={props.ID} />  
+        </>
+        )
+    }
+
+
 return (
     <>
     <p>Details are 🙎🏿</p>
@@ -27,10 +49,10 @@ return (
         </Box>
 
         {/* Update Button  */}
-        <Link to='/updatecontact' >
-        <Button id={props.ID} variant="outlined" color="secondary">Update</Button>
-        
+        <Link to={`/updatecontact/${props.Name}`} >
+        <Button onClick={ChangeContact} id={props.ID} variant="outlined" color="secondary">Update</Button>
         </Link>
+
 
 
         <Box gridColumn="span 5">
@@ -42,9 +64,7 @@ return (
 
 
         {/* Delete Button  */}
-        <Link to='/removecontact' >
-        <Button  id={props.ID} color='error' variant="outlined">Delete</Button>
-        </Link>
+        <Button onClick={DeleteContact} id={props.ID} color='error' variant="outlined">Delete</Button>
 
 
         </Box>

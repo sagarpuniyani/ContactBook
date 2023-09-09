@@ -14,7 +14,7 @@ const Readcontact = () => {
         const contactInfo = {
         name: nameRef.current.value,
         email: emailRef.current.value,
-    };
+        };
 
     try {
         console.log("From Get Contact: ", contactInfo);

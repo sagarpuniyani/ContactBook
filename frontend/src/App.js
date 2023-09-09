@@ -18,7 +18,7 @@ function App() {
         <Route path="/" element={<Allcontacts />} />
         <Route path="/createcontact" element={<Createcontact />} />
         <Route path="/getcontact" element={<Readcontact /> } />
-        <Route path="/updatecontact" element={<Updatecontact /> } />
+        <Route path={`/updatecontact/:name`} element={<Updatecontact /> } />
         <Route path="/removecontact" element={<Removecontact /> } />
       </Routes>
     </Router>

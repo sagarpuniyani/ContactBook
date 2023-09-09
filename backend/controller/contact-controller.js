@@ -82,7 +82,6 @@ export const contactcontroller = {
     async removecontact( req , res ){
         console.log("Enter");
         const contactId = req.params.contactid;
-        const updatedContactData = req.body;
         try {
             const result = await contactModel.findOneAndRemove({ _id: contactId }).exec();
     
