@@ -4,6 +4,19 @@ import Box from '@mui/material/Box';
 import { useRef } from 'react';
 import { apiclient } from '../../../shared/services/api-client';
 import { useParams } from 'react-router-dom';
+import { styled } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
+import { Link } from 'react-router-dom';
+import ManageAccountsSharpIcon from '@mui/icons-material/ManageAccountsSharp';
+import CabinRoundedIcon from '@mui/icons-material/CabinRounded';
+
+const ColorButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.getContrastText(purple[500]),
+    backgroundColor: purple[500],
+    '&:hover': {
+        backgroundColor: purple[700],
+    },
+    }));
 
 const Updatecontact = () => {
 
@@ -74,9 +87,22 @@ return (
             </Box>
         </Box>
 
-        <Button onClick={ChangeInContacts} variant="contained">
-            Find The Contact
+        <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2} >
+
+        <Box gridColumn="span 9" >
+        <Button onClick={ChangeInContacts}  startIcon={<ManageAccountsSharpIcon />} variant="contained">
+            Update Contact
         </Button>
+        </Box>
+
+        <Box  gridColumn="span 3" >
+        <Link to='/' >
+        <ColorButton startIcon={<CabinRoundedIcon />} variant="contained">Back To Home Screen </ColorButton>
+        </Link>
+        </Box>
+        </Box>
+
+
         </Container>
     </div>
     </>

@@ -5,6 +5,19 @@ import { useRef } from 'react';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { apiclient } from '../../../shared/services/api-client';
+import { Link } from 'react-router-dom';
+import { styled } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
+import CreateIcon from '@mui/icons-material/Create';
+import CabinRoundedIcon from '@mui/icons-material/CabinRounded';
+
+const ColorButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.getContrastText(purple[500]),
+    backgroundColor: purple[500],
+    '&:hover': {
+        backgroundColor: purple[700],
+    },
+    }));
 
 
 const Createcontact = () => {
@@ -66,7 +79,16 @@ return (
             </Box>
         </Box>
 
-        <Button onClick={AddContact}  variant="contained">Add To Contact</Button>
+        <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2} >
+            <Box gridColumn="span 9" >
+                <Button onClick={AddContact} startIcon={<CreateIcon />} variant="contained">Add To Contact</Button>
+            </Box>
+            <Box gridColumn="span 3">
+            <Link to='/' >
+            <ColorButton startIcon={< CabinRoundedIcon/>}  variant="contained">Back To Home Screen</ColorButton>
+            </Link>
+            </Box>
+        </Box>
         </Container>
     </div>
 )

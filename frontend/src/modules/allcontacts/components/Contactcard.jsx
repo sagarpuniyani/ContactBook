@@ -6,6 +6,8 @@ import Button from '@mui/material/Button';
 import { apiclient } from '../../../shared/services/api-client';
 import { Link } from 'react-router-dom';
 import Updatecontact from '../../updatecontact/pages/Updatecontact';
+import DeleteIcon from '@mui/icons-material/Delete';
+import SettingsApplicationsSharpIcon from '@mui/icons-material/SettingsApplicationsSharp';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -50,7 +52,7 @@ return (
 
         {/* Update Button  */}
         <Link to={`/updatecontact/${props.Name}`} >
-        <Button onClick={ChangeContact} id={props.ID} variant="outlined" color="secondary">Update</Button>
+        <Button onClick={ChangeContact} id={props.ID} variant="outlined" startIcon={<SettingsApplicationsSharpIcon/>} color="secondary">Update</Button>
         </Link>
 
 
@@ -64,7 +66,7 @@ return (
 
 
         {/* Delete Button  */}
-        <Button onClick={DeleteContact} id={props.ID} color='error' variant="outlined">Delete</Button>
+        <Button onClick={DeleteContact} id={props.ID} startIcon={<DeleteIcon />} color='error' variant="outlined">Delete</Button>
 
 
         </Box>

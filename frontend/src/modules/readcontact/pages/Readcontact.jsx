@@ -4,6 +4,19 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { apiclient } from '../../../shared/services/api-client';
 import Findcontact from '../components/Findcontact';
+import { Link } from 'react-router-dom';
+import { styled } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
+import PlagiarismRoundedIcon from '@mui/icons-material/PlagiarismRounded';
+import CabinRoundedIcon from '@mui/icons-material/CabinRounded';
+
+const ColorButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.getContrastText(purple[500]),
+    backgroundColor: purple[500],
+    '&:hover': {
+        backgroundColor: purple[700],
+    },
+    }));
 
 const Readcontact = () => {
     const [contact, setContact] = useState(null);
@@ -40,9 +53,20 @@ return (
         </Box>
         </Box>
         </Box>
-        <Button onClick={FindContactCard} variant="contained">
-            Find The Contact
-        </Button>
+
+        <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2} >
+            <Box gridColumn="span 3" >
+                <Button onClick={FindContactCard} startIcon={ < PlagiarismRoundedIcon />} color='success' variant="contained">
+                    Find The Contact
+                </Button>
+            </Box>
+            <Box gridColumn="span 3">
+            <Link to='/' >
+            <ColorButton  startIcon={ < CabinRoundedIcon />} variant="contained">Back To Home Screen</ColorButton>
+            </Link>
+            </Box>
+        </Box>
+
         {contact ? (
         <Findcontact
         Name={contact.name}
