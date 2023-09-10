@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Container, TextField } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useRef } from 'react';
 import { apiclient } from '../../../shared/services/api-client';
 import { useParams } from 'react-router-dom';
 
-const Updatecontact = (props) => {
+const Updatecontact = () => {
 
-
+    const [Message , setMessage ] = useState('');
     const  NameOfContact   = useParams();
-    console.log("NameOfContact " , NameOfContact )
     const nameRef = useRef();
     const emailRef = useRef();
     const decsRef = useRef();
@@ -36,10 +35,9 @@ const Updatecontact = (props) => {
         
         // updating the data 
         const ContactId = res.data.record._id;
-        console.log("ContactId " , ContactId);
-        const res_of_Update = await apiclient.put(`http://localhost:1234/updatecontact/${ContactId}` , ContactChangeInfo);
+        const res_of_Update = await apiclient.post(`http://localhost:1234/updatecontact/${ContactId}` , ContactChangeInfo);
+        setMessage("Update Contact")
         console.log("res_of_Update" , res_of_Update);
-
     }
     catch(err){
         console.log(err)
@@ -49,7 +47,7 @@ const Updatecontact = (props) => {
 
 return (
     <>
-    Update The Contact 
+    <p> {Message} </p>
     <div>
         
         <Container>

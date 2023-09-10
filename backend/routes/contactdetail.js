@@ -16,7 +16,7 @@ contactdetailsRoutes.post('/getcontact' , contactcontroller.readcontact);
 contactdetailsRoutes.get('/getallcontact' , contactcontroller.readallcontacts);
 
 //4. update 
-contactdetailsRoutes.put('/updatecontact/:contactid' , contactcontroller.updatecontact)
+contactdetailsRoutes.post('/updatecontact/:contactid' , contactcontroller.updatecontact)
 
 //5. delete 
 contactdetailsRoutes.delete('/removeContact/:contactid' , contactcontroller.removecontact)

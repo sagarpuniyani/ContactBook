@@ -30,7 +30,7 @@ const Contactcard = (props) => {
     const ChangeContact = () => {
         return(
         <>
-        <Updatecontact Name={props.Name} ID={props.ID} />  
+        <Updatecontact/>  
         </>
         )
     }

@@ -57,6 +57,7 @@ export const contactcontroller = {
 
     // updating the data of the contact 
     async updatecontact( req , res){
+        console.log("Update Request ");
         const contactId = req.params.contactid;
         const updatedContactData = req.body;
 
