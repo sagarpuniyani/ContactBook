@@ -66,7 +66,9 @@ return (
 
 
         {/* Delete Button  */}
+        <Link to='/' >
         <Button onClick={DeleteContact} id={props.ID} startIcon={<DeleteIcon />} color='error' variant="outlined">Delete</Button>
+        </Link>
 
 
         </Box>
