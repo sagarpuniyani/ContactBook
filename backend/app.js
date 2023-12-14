@@ -12,12 +12,12 @@ app.use(express.json());
 
 // To get the mutiple parameters
 
-// calling the Contacy details route 
+// calling the Contact details route 
 app.use('/' , contactdetailsRoutes);
 
 // Last Middle Ware (404)
-app.use((req , res , next ) =>{
-    res.json({message : '404 not found '})
+app.use((_ , res , _ ) =>{
+    res.status(404).json({message : '404 not found '})
 })
 
 // startup the server 
