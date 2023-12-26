@@ -16,7 +16,7 @@ app.use(express.json());
 app.use('/' , contactdetailsRoutes);
 
 // Last Middle Ware (404)
-app.use((_ , res , _ ) =>{
+app.use((_ , res  ) =>{
     res.status(404).json({message : '404 not found '})
 })
 
