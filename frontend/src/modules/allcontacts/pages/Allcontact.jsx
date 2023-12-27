@@ -24,7 +24,7 @@ const Allcontacts = () => {
 
     const getallcontact = async () => {
         const res = await apiclient.get("http://localhost:1234/getallcontact" );
-        setcontact( contact => res.data.records);
+        setcontact( contact => contact = res.data.records);
         console.log("Response is  =  " , res);
         console.log("Response.name  is  =  " , res.data.records.name);
     }
