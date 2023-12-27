@@ -32,7 +32,7 @@ const Contactcard = (props) => {
     const ChangeContact = () => {
         return(
         <>
-        <Updatecontact/>  
+        <Updatecontact /> 
         </>
         )
     }
