@@ -45,22 +45,22 @@ return (
     <Container>
         <Box sx={{ width: 1 }}>
         <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
-            <Box gridColumn="span 3">
+            <Box gridColumn="span 6">
             <TextField inputRef={nameRef} id="outlined-basic" label="Name" variant="outlined" />
             </Box>
-            <Box gridColumn="span 3">
+            <Box gridColumn="span 6">
             <TextField inputRef={emailRef} id="outlined-basic" label="Email" variant="outlined" />
         </Box>
         </Box>
         </Box>
 
-        <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2} >
-            <Box gridColumn="span 3" >
+        <Box display="grid " gridTemplateColumns="repeat(12, 1fr)" gap={6} >
+            <Box gridColumn="span 6" >
                 <Button onClick={FindContactCard} startIcon={ < PlagiarismRoundedIcon />} color='success' variant="contained">
                     Find The Contact
                 </Button>
             </Box>
-            <Box gridColumn="span 3">
+            <Box gridColumn="span 6">
             <Link to='/' >
             <ColorButton  startIcon={ < CabinRoundedIcon />} variant="contained">Back To Home Screen</ColorButton>
             </Link>

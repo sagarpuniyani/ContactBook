@@ -52,7 +52,7 @@ return (
     <Box gridColumn="span 3">
 
     <Link to='/createcontact' >
-    <ColorButton startIcon={ <CreateIcon />} variant="contained">Craete New Contact</ColorButton>
+    <ColorButton startIcon={ <CreateIcon />} variant="contained">Create New Contact</ColorButton>
     </Link>
     </Box>
     </Box>
