@@ -1,0 +1,16 @@
+{
+    "name": "contact-book-app",
+    "private": true,
+    "workspaces": [
+        "frontend",
+        "backend"
+    ],
+    "scripts": {
+        "dev:frontend" : "cd frontend && react-scripts start",
+        "dev:backend": "nodemon backend/app.js",
+        "dev" : "concurrently \"yarn dev:frontend\" \"yarn dev:backend\""
+        },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
