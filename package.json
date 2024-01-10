@@ -2,8 +2,8 @@
     "name": "contact-book-app",
     "private": true,
     "workspaces": [
-        "frontend",
-        "backend"
+        "backend",
+        "frontend"
     ],
     "scripts": {
         "dev:frontend" : "cd frontend && react-scripts start",
