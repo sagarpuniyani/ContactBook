@@ -1,6 +1,6 @@
 import { contactModel } from "../model/contact-modle.js";
 
-export const contactcontroller = {
+const contactcontroller = {
     async addcontact( req , res ){
         const contantInfo = req.body;
 
@@ -97,3 +97,5 @@ export const contactcontroller = {
         }
     }
 }
+
+export { contactcontroller }
